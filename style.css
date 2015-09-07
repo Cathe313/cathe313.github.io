@@ -1,7 +1,7 @@
 body {
     background-image:url("https://static.pexels.com/photos/370/lights-night-dark-abstract-large.jpeg");
     background-size: cover;
-    background-position:center;
+    background-repeat: no-repeat;
     color: white;
     font-family: sans-serif;
     text-align:center;
@@ -16,7 +16,7 @@ img {
 
 h1 {
     font-family: 'Montez', serif;
-    font-size: 60px;
+    font-size: 70px;
     float: clear;
 }
 
