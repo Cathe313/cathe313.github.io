@@ -51,7 +51,7 @@ p {
     font-family:'Muli', sans-serif;
 }
 
-div {
+.social-media-box {
     width:18%;
     /*padding:20px;*/
     border:10px solid black;
