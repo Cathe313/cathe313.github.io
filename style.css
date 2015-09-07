@@ -5,28 +5,49 @@ body {
     color: white;
     font-family: sans-serif;
     text-align:center;
+    position: relative;
+    z-index:1;
 }
 
 img {
     border-radius: 50%;
     height: 250px;
     width:250px;
-    float: right;
+   
 }
 
 h1 {
     font-family: 'Montez', serif;
     font-size: 70px;
-    float: clear;
+   
 }
 
 h2 {
     font-size: 40px;
-    float:clear;
+   
 }
 
 p {
     font-size: 30px;
     font-family:'Muli', sans-serif;
-    float:clear;
 }
+
+.sm {
+    width:40px;
+    height:40px;
+    transition:transform 250ms;
+}
+
+.sm:hover {
+    transform:scale(1.5);
+}
+
+/*.overlay {
+    position:absolute;
+    top:10;
+    left:10;
+    right:10;
+    bottom:10;
+    background-image: url("https://static.pexels.com/photos/370/lights-night-dark-abstract-large.jpeg") (0, 0, 0, 0.85); /* ie fallback png background image */
+    z-index:9999;
+} */
