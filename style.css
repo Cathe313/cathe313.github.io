@@ -7,13 +7,26 @@ body {
     text-align:center;
 }
 
-h1 {
-    font-family: 'Montez', serif;
-    font-size: 45px;
-}
-
 img {
     border-radius: 50%;
-    height: 120px;
-    width:120px;
+    height: 250px;
+    width:250px;
+    float: right;
+}
+
+h1 {
+    font-family: 'Montez', serif;
+    font-size: 60px;
+    float: clear;
+}
+
+h2 {
+    font-size: 40px;
+    float:clear;
+}
+
+p {
+    font-size: 30px;
+    font-family:'Muli', sans-serif;
+    float:clear;
 }
