@@ -1,9 +1,9 @@
-Personal webpage exercise
-=========================
+Personal webpage
+================
 
 DecodeMTL full-stack web development bootcamp
 ---------------------------------------------
 
-This is the first exercise of the class.
+This website was started as an assignment from the DecodeMTL full-stack web development bootcamp.
 
 [DecodeMTL](http://www.decodemtl.com/)
