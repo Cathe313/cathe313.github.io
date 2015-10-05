@@ -3,6 +3,20 @@ html, body {
   height: 100%;
 }
 
+nav {
+    float: right;
+    width: 5%;
+}
+
+menu {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    font-family:'Muli', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
 
 body {
     background-image:linear-gradient(to right, rgba(0,0,0,0.5)0 , rgba(0,0,0,0.5) 100%), url("https://static.pexels.com/photos/370/lights-night-dark-abstract-large.jpeg");
@@ -37,12 +51,14 @@ img {
 h1 {
     font-family: 'Montez', serif;
     font-size: 70px;
+    float: left;
+    width: 50%;
    
 }
 
 h2 {
     font-size: 40px;
-     font-family:'Muli', sans-serif;
+    font-family:'Muli', sans-serif;
    
 }
 
