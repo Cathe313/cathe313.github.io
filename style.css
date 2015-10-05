@@ -3,21 +3,6 @@ html, body {
   height: 100%;
 }
 
-nav {
-    float: right;
-    width: 5%;
-}
-
-menu {
-    display: inline-block;
-    padding: 10px;
-    font-size: 20px;
-    font-family:'Muli', sans-serif;
-    text-decoration: none;
-    color: white;
-}
-
-
 body {
     background-image:linear-gradient(to right, rgba(0,0,0,0.5)0 , rgba(0,0,0,0.5) 100%), url("https://static.pexels.com/photos/370/lights-night-dark-abstract-large.jpeg");
     background-size: cover;
@@ -27,6 +12,38 @@ body {
     text-align:center;
     position: relative;
     z-index:1;
+}
+
+nav {
+    float: right;
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    display: inline-block;
+    padding: 20px;
+    font-size: 35px;
+    font-family:'Muli', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.title {
+    float: left;
+    width: 50%;
+    margin-top: 0px;
+}
+
+h1 {
+    font-family: 'Montez', serif;
+    font-size: 80px;
+}
+
+.about {
+    margin-top: 20px;
+    float: clear;
 }
 
 img {
@@ -46,14 +63,6 @@ img {
 
 .profile-pic-wrapper {
     perspective: 500px;
-}
-
-h1 {
-    font-family: 'Montez', serif;
-    font-size: 70px;
-    float: left;
-    width: 50%;
-   
 }
 
 h2 {
