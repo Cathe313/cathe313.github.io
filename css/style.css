@@ -100,4 +100,9 @@ p {
 .sm:hover {
     transform:scale(1.5);
 }
+.coming-soon {
+    float: left;
+    width: 100%;
+}
+
 
