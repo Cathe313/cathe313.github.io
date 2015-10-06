@@ -1,0 +1,100 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+    background-image:linear-gradient(to right, rgba(0,0,0,0.5)0 , rgba(0,0,0,0.5) 100%), url("https://static.pexels.com/photos/370/lights-night-dark-abstract-large.jpeg");
+    background-size: cover;
+    /*background-repeat: no-repeat;*/
+    color: white;
+    font-family: sans-serif;
+    text-align:center;
+    position: relative;
+    z-index:1;
+}
+
+nav {
+    float: right;
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 35px;
+    font-family:'Muli', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.title {
+    float: left;
+    width: 50%;
+    margin-top: 0px;
+}
+
+h1 {
+    font-family: 'Montez', serif;
+    font-size: 80px;
+    color: white;
+}
+
+.about {
+    margin-top: 20px;
+    /*float: clear;*/
+}
+
+img {
+    border-radius: 50%;
+    height: 250px;
+    width:250px;
+   
+}
+
+#profile {
+    transition:transform 250ms;
+}
+
+#profile:hover {
+    transform:scale(1.1);
+}
+
+.profile-pic-wrapper {
+    perspective: 500px;
+}
+
+h2 {
+    font-size: 40px;
+    font-family:'Muli', sans-serif;
+   
+}
+
+p {
+    font-size: 30px;
+    font-family:'Muli', sans-serif;
+}
+
+.social-media-box {
+    width:22%;
+    /*padding:20px;*/
+    border:10px solid black;
+    margin:30px;
+    text-align:center;
+    display:inline-block;
+    border-radius:10px;
+}
+
+.sm {
+    width:40px;
+    height:40px;
+    transition:transform 250ms;
+    padding:8px;
+}
+
+.sm:hover {
+    transform:scale(1.5);
+}
+
