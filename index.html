@@ -2,22 +2,25 @@
 <html>
     <head>
         <title>Catherine Ducharme</title>
-        <link rel="stylesheet" href="style.css" type="text/css" />
+        <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="css/foundation.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <section class="title">
-            <h1>Catherine Ducharme</h1>
-            <!--<h2>Web development apprentice</h2>-->
-        </section>
-        
-        <nav>
-            <a href="">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="">Contact</a>
-        </nav>
-        
+        <div class="contain-to-grid sticky">
+            <section class="title">
+                <h1>Catherine Ducharme</h1 class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+                <!--<h2>Web development apprentice</h2>-->
+            </section>
+            
+            <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+                <a href="">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="">Contact</a>
+            </nav>
+        </div>
         <section class="about">
             <!--<img id="profile" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpa1/v/t1.0-1/c22.22.276.276/p320x320/67154_10151241688195119_873293721_n.jpg?oh=6397ddd0b1e7151aa87ea9ee3b6a5371&oe=5677FF87&__gda__=1450259396_439fba6766adc21a072886435e1a5820"></img>-->
             <p>I do communications and translation, and soon I'll do JavaScript,
@@ -25,7 +28,7 @@
             <p></p>            
         </section>
         
-        <section class="social-media-box">
+        <section class="social-media">
             <p>
             <a href="https://ca.linkedin.com/in/catherineducharme1" target="_blank"><img class="sm" src="images/linkedin-icon.png"></a>    
             <a href="https://github.com/Cathe313" target="_blank"><img class="sm" src="images/github-icon.png"></a>    
