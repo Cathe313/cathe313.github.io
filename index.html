@@ -9,12 +9,12 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
 
-  <body>
+<body class="text-center">
     <div class="contain-to-grid sticky">
       <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
         <ul class="title-area">
           <li class="name">
-            <h1><a href="#">Catherine Ducharme</a></h1>
+            <h1><a href="#main">Catherine Ducharme</a></h1>
           </li>
           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
           <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -23,21 +23,18 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li class="active"><a href="#">Portfolio</a></li>
-            <li class="active"><a href="#">Contact</a></li>
+            <li class="active"><a href="#portfolio">Portfolio</a></li>
+            <li class="active"><a href="#contact">Contact</a></li>
           </ul>
         </section>
       </nav>
     </div>
-    
-    <div class="panel">
-      <h5>This is a regular panel.</h5>
-      <p>It has an easy to override visual style, and is appropriately subdued.</p>
-    </div>
+
+    <div id="app"></div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app-bundle.js"></script>
   </body>
 
   </html>
