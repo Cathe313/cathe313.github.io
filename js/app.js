@@ -1,6 +1,7 @@
 $(document).foundation();
 
 var Backbone = require('backbone');
+var display = require('./lib/display');
 
 var router = Backbone.Router.extend({
     routes: {
@@ -13,13 +14,13 @@ var router = Backbone.Router.extend({
         this.navigate('main', {trigger: true});
     },
     main: function() {
-        console.log('main');
+        display.main();
     },
     portfolio: function() {
-        console.log('portfolio');
+        display.portfolio();
     },
     contact: function() {
-        console.log('contact');
+        display.contact();
     }
 });
 
