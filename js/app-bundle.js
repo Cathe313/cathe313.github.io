@@ -49,6 +49,27 @@
 	var Backbone = __webpack_require__(1);
 	var display = __webpack_require__(4);
 
+	//Changing between languages
+	if (window.localStorage.getItem('language') === null) {
+	    window.localStorage.setItem('language', 'En');
+	}
+	console.log(window.localStorage.getItem('language'));
+
+	$('body').on('click', '.language', function() {
+	    if (window.localStorage.getItem('language') === 'Fr') {
+	        window.localStorage.setItem('language', 'En');
+	        console.log(window.localStorage.getItem('language'));
+	        window.location.reload();
+	        // display.createHeaderEn();
+	    }
+	    else {
+	        window.localStorage.setItem('language', 'Fr');
+	        console.log(window.localStorage.getItem('language'));
+	        window.location.reload();
+	        // display.createHeaderFr();
+	    }
+	});
+
 	var router = Backbone.Router.extend({
 	    routes: {
 	        '': 'homePage',
@@ -57,7 +78,9 @@
 	        'contact': 'contact'
 	    },
 	    homePage: function() {
-	        this.navigate('main', {trigger: true});
+	        this.navigate('main', {
+	            trigger: true
+	        });
 	    },
 	    main: function() {
 	        display.main();
@@ -12755,30 +12778,85 @@
 	
 	var _ = __webpack_require__(5);
 	var $app = $('#app');
+	var $header = $('#header');
 
+	// if (window.localStorage.getItem('language') === null) {
+	//     window.localStorage.setItem('language', 'En');
+	// }
+	// console.log(window.localStorage.getItem('language'));
+
+	function createHeaderEn() {
+	    $header.html('');
+	    var entryTemplateText = __webpack_require__(6);
+	    var template = _.template( entryTemplateText );
+	    var compiledTemplate = template();
+	    $header.append(compiledTemplate);
+	    $header.foundation();
+	}
+
+	function createHeaderFr() {
+	    $header.html('');
+	    var entryTemplateText = __webpack_require__(7);
+	    var template = _.template( entryTemplateText );
+	    var compiledTemplate = template();
+	    $header.append(compiledTemplate);
+	    $header.foundation();
+	}
 
 	function displayMainPage() {
 	    $app.html('');
-	    var entryTemplateText = __webpack_require__(6);
-	    var template = _.template(entryTemplateText);
-	    var compiledTemplate = template();
-	    $app.append(compiledTemplate);
+	    if (window.localStorage.getItem('language') === 'En') {
+	        createHeaderEn();
+	        var entryTemplateText = __webpack_require__(8);
+	        var template = _.template(entryTemplateText);
+	        var compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
+	    else {
+	        createHeaderFr();
+	        entryTemplateText = __webpack_require__(8);
+	        template = _.template(entryTemplateText);
+	        compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
 	}
 
 	function displayContact() {
 	    $app.html('');
-	    var entryTemplateText = __webpack_require__(7);
-	    var template = _.template(entryTemplateText);
-	    var compiledTemplate = template();
-	    $app.append(compiledTemplate);
+	    
+	    if (window.localStorage.getItem('language') === 'En') {
+	        createHeaderEn();
+	        var entryTemplateText = __webpack_require__(9);
+	        var template = _.template(entryTemplateText);
+	        var compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
+	    else {
+	        createHeaderFr();
+	        entryTemplateText = __webpack_require__(9);
+	        template = _.template(entryTemplateText);
+	        compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
 	}
 
-	function displayPortfolio(){
+	function displayPortfolio() {
 	    $app.html('');
-	    var entryTemplateText = __webpack_require__(8);
-	    var template = _.template(entryTemplateText);
-	    var compiledTemplate = template();
-	    $app.append(compiledTemplate);
+	    
+	    if (window.localStorage.getItem('language') === 'En') {
+	        createHeaderEn();
+	        var entryTemplateText = __webpack_require__(10);
+	        var template = _.template(entryTemplateText);
+	        var compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
+	    else {
+	        createHeaderFr();
+	        entryTemplateText = __webpack_require__(10);
+	        template = _.template(entryTemplateText);
+	        compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
 	}
 
 
@@ -14346,16 +14424,28 @@
 /* 6 */
 /***/ function(module, exports) {
 
-	module.exports = "    <div class=\"panel\">\n      <div class=\"middle\">\n        <h5>Web Developer</h5>\n        <h5>Maker of Bilingual Websites</h5>\n        <h5>Sherbrooker</h5>\n      </div>\n    </div>\n    <div>\n      <h5>Some stuff about me</h5>\n      <p class=\"about\">Full-stack web developer, maker of bilingual websites for Canadian clients. \n      I am a former communications specialist with extensive translation experience.</p>\n    </div>"
+	module.exports = "    <div class=\"contain-to-grid sticky\">\n      <nav class=\"top-bar\" data-topbar role=\"navigation\" data-options=\"sticky_on: large\">\n        <ul class=\"title-area\">\n          <li class=\"name\">\n            <h1><a href=\"#main\">Catherine Ducharme</a></h1>\n          </li>\n          <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n          <li class=\"toggle-topbar menu-icon\"><a href=\"#\"><span>Menu</span></a></li>\n        </ul>\n\n        <section class=\"top-bar-section\">\n          <!-- Right Nav Section -->\n          <ul class=\"right\">\n            <li class=\"active\"><a href=\"#portfolio\">Portfolio</a></li>\n            <li class=\"active\"><a href=\"#contact\">Contact</a></li>\n            <li class=\"language\">Français</li>\n          </ul>\n        </section>\n      </nav>\n    </div>"
 
 /***/ },
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n        <section class=\"social-media\">\n            <p>\n                Get in touch with me using one of the following options:\n            </p>\n            <p>\n            <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>    \n            <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>    \n            <a href=\"https://twitter.com/ducharme_ca\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n            <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n            </p>\n        </section>"
+	module.exports = "    <div class=\"contain-to-grid sticky\">\n      <nav class=\"top-bar\" data-topbar role=\"navigation\" data-options=\"sticky_on: large\">\n        <ul class=\"title-area\">\n          <li class=\"name\">\n            <h1><a href=\"#main\">Catherine Ducharme</a></h1>\n          </li>\n          <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n          <li class=\"toggle-topbar menu-icon\"><a href=\"#\"><span>Menu</span></a></li>\n        </ul>\n\n        <section class=\"top-bar-section\">\n          <!-- Right Nav Section -->\n          <ul class=\"right\">\n            <li class=\"active\"><a href=\"#portfolio\">Portfolio</a></li>\n            <li class=\"active\"><a href=\"#contact\">Coordonnées</a></li>\n            <li class=\"language\">English</li>\n          </ul>\n        </section>\n      </nav>\n    </div>"
 
 /***/ },
 /* 8 */
+/***/ function(module, exports) {
+
+	module.exports = "    <div class=\"panel\">\n      <div class=\"middle\">\n        <h5>Full-Stack Web Developer</h5>\n        <h5>Maker of Bilingual Websites</h5>\n        <h5>Sherbrooker</h5>\n      </div>\n    </div>\n    <div class=\"main\">\n      <!--<div class=\"large-12 columns\">-->\n      <!--  <h5>Some stuff about me</h5>-->\n      <!--</div>-->\n      <div class=\"medium-4 columns\">\n        <img id='pic' src='https://www.gravatar.com/avatar/e32c8ef762f13c8d17ebf9e5dc625a29.jpg?s=500'>\n      </div>  \n      <div class=\"medium-8 columns\">\n        <p class=\"about\">I am a former communications professional with extensive \n        translation experience.</p>\n      </div>  \n    </div>"
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	module.exports = "\n\n        <section class=\"social-media\">\n            <p>\n                Get in touch with me using one of the following options:\n            </p>\n            <p>\n            <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>    \n            <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>    \n            <a href=\"https://twitter.com/ducharme_ca\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n            <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n            </p>\n        </section>"
+
+/***/ },
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = "        <section class=\"coming-soon\">\n            <p>Coming soon!</p>\n        </section>"
