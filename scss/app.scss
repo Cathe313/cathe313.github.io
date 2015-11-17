@@ -58,6 +58,16 @@ body {
     text-align: center;
 }
 
+
+ul {
+    list-style: none;
+    li {
+        color: white;
+        font-family: 'Muli';
+        font-size: 16px;        
+    }
+}
+
 nav {
     color: white;
     a {
@@ -73,10 +83,11 @@ nav {
 .panel {
     background-image: url("../assets/images/wood-pattern-ground-parquet-floor.jpg");
     background-size: cover;
-    height: 50%;
-    @media only screen and (min-width: 64.063em) { 
-        height: 60%;
-    }
+    height: 100vh;
+    width: 100vw;
+    // @media only screen and (min-width: 64.063em) { 
+    //     height: 60%;
+    // }
     
     h5 {
         padding: 10px;
@@ -90,33 +101,39 @@ nav {
         }
     }
     .middle {
-        @include vertical-align();
+        margin-top: 30px;
+        text-align: center;
     }
 }
 
 //profile picture
 #pic {
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     @media only screen and (min-width: 64.063em) { 
-        height: 250px;
-        width: 250px;
+        height: 150px;
+        width: 150px;
 
     }
 }
 
 .about {
     @include vertical-align();
+    margin-top: 20px;
+}
+
+.main {
+    margin: 40px;
 }
 
 
 //social media icons
 
 .social-media {
-    margin:30px;
-    text-align:center;
-    display:inline-block;
+    margin: 30px;
+    text-align: center;
+    display: inline-block;
 }
 
 .sm {
