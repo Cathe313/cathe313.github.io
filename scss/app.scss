@@ -68,9 +68,6 @@ nav {
         font-family: 'Montez', serif;
         font-size: 40px;
     }
-    .language {
-        @include vertical-align();
-    }
 }
 
 .panel {
@@ -107,6 +104,10 @@ nav {
         width: 250px;
 
     }
+}
+
+.about {
+    @include vertical-align();
 }
 
 
