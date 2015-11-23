@@ -1,20 +1,19 @@
 @import "settings";
-@import "foundation";
+// @import "foundation";
 
 // Or selectively include components
-// @import
+@import "foundation/components/grid";
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
 //   "foundation/components/block-grid",
 //   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
+@import "foundation/components/button-groups";
+@import "foundation/components/buttons";
 //   "foundation/components/clearing",
 //   "foundation/components/dropdown",
 //   "foundation/components/dropdown-buttons",
 //   "foundation/components/flex-video",
 //   "foundation/components/forms",
-//   "foundation/components/grid",
 //   "foundation/components/inline-lists",
 //   "foundation/components/joyride",
 //   "foundation/components/keystrokes",
@@ -34,7 +33,7 @@
 //   "foundation/components/tabs",
 //   "foundation/components/thumbs",
 //   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
+@import "foundation/components/top-bar";
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
@@ -47,84 +46,106 @@
   transform: translateY(-50%);
 }
 
+$font-color: #FFFFE0;
+
 html, body {
   width: 100%;
   height: 100%;
 }
 
 body {
-    position: relative;
+    // position: relative;
     font-family: 'Muli';
     text-align: center;
+    color: $font-color;
+    font-size: 22px;
+    margin: auto;
 }
 
+a {
+    text-decoration: none;
+    color: #6B8E23;
+}
 
 ul {
     list-style: none;
     li {
-        color: white;
         font-family: 'Muli';
-        font-size: 16px;        
-    }
-}
-
-nav {
-    color: white;
-    a {
-        font-size: 40px;
-    }
-    
-    h1 {
-        font-family: 'Montez', serif;
-        font-size: 40px;
     }
 }
 
 .panel {
-    background-image: url("../assets/images/wood-pattern-ground-parquet-floor.jpg");
+    background-image: url("../assets/images/abstract-bkground.jpg");
     background-size: cover;
     height: 100vh;
     width: 100vw;
-    // @media only screen and (min-width: 64.063em) { 
-    //     height: 60%;
-    // }
-    
+    background-repeat: repeat-y;
+}
+
+.landing {
+    background-image: url("../assets/images/light-creative-abstract-colorful.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: repeat-y;
     h5 {
         padding: 10px;
-        text-align: left;
-        font-family: 'Muli', serif;
+        font-size: 30px;
+        text-align: center;
         color: white;
-        font-size: 40px;
-        // margin-left: 5px;
-        @media only screen and (min-width: 64.063em) { 
-        margin-left: 20px;
-        }
     }
     .middle {
         margin-top: 30px;
-        text-align: center;
+        background-color: gray;
+        border-radius: 3%;
+        width: 400px;
+        height: 400px;
     }
+    @media only screen and (min-width: 64.063em) { 
+        @include vertical-align();
+        border-radius: 50%;
+        width: 550px;
+        height: 550px;
+    }
+
+}
+
+.para {
+    margin-bottom: 60px;
 }
 
 //profile picture
-#pic {
+.pic {
     border-radius: 50%;
     height: 100px;
     width: 100px;
-    @media only screen and (min-width: 64.063em) { 
-        height: 150px;
-        width: 150px;
+    // @media only screen and (min-width: 64.063em) { 
+    //     height: 150px;
+    //     width: 150px;
 
-    }
+    // }
+}
+
+#cathepic {
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    // @media only screen and (min-width: 64.063em) { 
+    //     height: 150px;
+    //     width: 150px;
+
+    // }
 }
 
 .about {
     @include vertical-align();
-    margin-top: 20px;
+/*    margin-top: 40px;
+    margin-bottom: 40px;*/
 }
 
 .main {
-    margin: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 
@@ -155,6 +176,21 @@ nav {
 
 //end of social media icons
 
+//Navigation bar
 
+nav {
+    background: $font-color;
+    a {
+        font-size: 40px;
+        color: $font-color;
+    }
+    h1 {
+        font-family: 'Montez', serif;
+        font-size: 40px;
+    }
+    .active {
+        background-color: #186FB6;
+    }
+}
 
-
+//end of navigation bar
