@@ -37,7 +37,7 @@ function displayMainPage() {
     }
     else {
         createHeaderFr();
-        entryTemplateText = require('raw!../views/main.ejs');
+        entryTemplateText = require('raw!../views/main-fr.ejs');
         template = _.template(entryTemplateText);
         compiledTemplate = template();
         $app.append(compiledTemplate);
@@ -56,7 +56,7 @@ function displayContact() {
     }
     else {
         createHeaderFr();
-        entryTemplateText = require('raw!../views/contact.ejs');
+        entryTemplateText = require('raw!../views/contact-fr.ejs');
         template = _.template(entryTemplateText);
         compiledTemplate = template();
         $app.append(compiledTemplate);

@@ -3,7 +3,7 @@
 
 // Or selectively include components
 @import "foundation/components/grid";
-//   "foundation/components/accordion",
+@import "foundation/components/accordion";
 //   "foundation/components/alert-boxes",
 //   "foundation/components/block-grid",
 //   "foundation/components/breadcrumbs",
@@ -210,6 +210,7 @@ ul {
 #contactpage {
     margin-left: 33px;
     font-style: bold;
+    font-size: 22px;
 }
 
 //social media icons
