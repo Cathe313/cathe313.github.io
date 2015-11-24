@@ -28,8 +28,9 @@ var router = Backbone.Router.extend({
     routes: {
         '': 'homePage',
         'main': 'main',
-        'portfolio': 'portfolio',
-        'contact': 'contact'
+        'about': 'about',
+        'contact': 'contact',
+        'projects': 'projects'
     },
     homePage: function() {
         this.navigate('main', {
@@ -39,11 +40,14 @@ var router = Backbone.Router.extend({
     main: function() {
         display.main();
     },
-    portfolio: function() {
-        display.portfolio();
+    about: function() {
+        display.about();
     },
     contact: function() {
         display.contact();
+    },
+    projects: function() {
+        display.projects();
     }
 });
 

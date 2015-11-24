@@ -55,11 +55,17 @@ html, body {
 }
 
 body {
-    // position: relative;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5)0 , rgba(0,0,0,0.5) 100%), url("../assets/images/abstract-bkground.jpg");
+    background-size: cover;
+    // height: 100vh;
+    // width: 100vw;
+    // background-repeat: repeat-y;
+    z-index:1;
+    position: relative;
     font-family: 'Muli';
     text-align: center;
     color: $font-color;
-    font-size: 22px;
+    font-size: 18px;
     margin: auto;
 }
 
@@ -134,11 +140,6 @@ ul {
 }
 
 .panel {
-    background-image: url("../assets/images/abstract-bkground.jpg");
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    background-repeat: repeat-y;
     h5 {
         // padding: 10px;
         font-size: 25px;
@@ -148,21 +149,21 @@ ul {
     }
     .middle {
         margin: auto;
-        background-color: $nav-col;
-        border-radius: 5%;
-        width: 350px;
-        height: 350px;
+        padding-top: 40px;
+        // background-color: $nav-col;
+        // border-radius: 5%;
+        // width: 350px;
+        // height: 350px;
         @media only screen and (min-width: 64.063em) { 
-            @include vertical-align();
-            border-radius: 50%;
-            width: 500px;
-            height: 500px;
+            // @include vertical-align();
+            // border-radius: 50%;
+            // width: 500px;
+            // height: 500px;
         }
     }
-
 }
 
-.twitter-timeline {
+.columns.twitter-timeline {
     margin-top: 30px;
 }
 
@@ -170,11 +171,11 @@ ul {
     margin-bottom: 60px;
 }
 
-//profile picture
+
 .pic {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     // @media only screen and (min-width: 64.063em) { 
     //     height: 150px;
     //     width: 150px;
@@ -182,10 +183,11 @@ ul {
     // }
 }
 
+//profile picture
 #cathepic {
     border-radius: 50%;
-    height: 140px;
-    width: 140px;
+    height: 200px;
+    width: 200px;
     // @media only screen and (min-width: 64.063em) { 
     //     height: 150px;
     //     width: 150px;
@@ -195,6 +197,7 @@ ul {
 
 .about {
     @include vertical-align();
+    display: inline;
 /*    margin-top: 40px;
     margin-bottom: 40px;*/
 }
@@ -204,6 +207,10 @@ ul {
     margin-bottom: 40px;
 }
 
+#contactpage {
+    margin-left: 33px;
+    font-style: bold;
+}
 
 //social media icons
 

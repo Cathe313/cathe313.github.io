@@ -74,8 +74,9 @@
 	    routes: {
 	        '': 'homePage',
 	        'main': 'main',
-	        'portfolio': 'portfolio',
-	        'contact': 'contact'
+	        'about': 'about',
+	        'contact': 'contact',
+	        'projects': 'projects'
 	    },
 	    homePage: function() {
 	        this.navigate('main', {
@@ -85,11 +86,14 @@
 	    main: function() {
 	        display.main();
 	    },
-	    portfolio: function() {
-	        display.portfolio();
+	    about: function() {
+	        display.about();
 	    },
 	    contact: function() {
 	        display.contact();
+	    },
+	    projects: function() {
+	        display.projects();
 	    }
 	});
 
@@ -12859,11 +12863,30 @@
 	    }
 	}
 
+	function displayProjects() {
+	    $app.html('');
+	    
+	    if (window.localStorage.getItem('language') === 'En') {
+	        createHeaderEn();
+	        var entryTemplateText = __webpack_require__(11);
+	        var template = _.template(entryTemplateText);
+	        var compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
+	    else {
+	        createHeaderFr();
+	        entryTemplateText = __webpack_require__(11);
+	        template = _.template(entryTemplateText);
+	        compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
+	}
 
 	module.exports = {
 	    'main': displayMainPage,
 	    'contact': displayContact,
-	    'portfolio': displayPortfolio
+	    'about': displayPortfolio,
+	    'projects': displayProjects
 	};
 
 /***/ },
@@ -14424,31 +14447,37 @@
 /* 6 */
 /***/ function(module, exports) {
 
-	module.exports = "    <div class=\"contain-to-grid sticky\">\n      <nav class=\"top-bar\" data-topbar role=\"navigation\" data-options=\"sticky_on: large\">\n        <ul class=\"title-area\">\n          <li class=\"name\">\n            <h1><a href=\"#main\">Catherine Ducharme</a></h1>\n          </li>\n          <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n          <li class=\"toggle-topbar menu-icon\"><a href=\"#\"><span>Menu</span></a></li>\n        </ul>\n\n        <section class=\"top-bar-section\">\n          <!-- Right Nav Section -->\n          <ul class=\"right\">\n            <li class=\"active\"><a href=\"#portfolio\">About</a></li>\n            <li class=\"active\"><a href=\"#contact\">Contact</a></li>\n            <li class=\"language\"><a>Français</a></li>\n          </ul>\n        </section>\n      </nav>\n    </div>"
+	module.exports = "    <div class=\"contain-to-grid sticky\">\n      <nav class=\"top-bar\" data-topbar role=\"navigation\" data-options=\"sticky_on: large\">\n        <ul class=\"title-area\">\n          <li class=\"name\">\n            <h1><a href=\"#main\">Catherine Ducharme</a></h1>\n          </li>\n          <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n          <li class=\"toggle-topbar menu-icon\"><a href=\"#\"><span>Menu</span></a></li>\n        </ul>\n\n        <section class=\"top-bar-section\">\n          <!-- Right Nav Section -->\n          <ul class=\"right\">\n            <li class=\"active\"><a href=\"#about\">About</a></li>\n            <li class=\"active\"><a href=\"#projects\">Projects</a></li>\n            <li class=\"active\"><a href=\"#contact\">Contact</a></li>\n            <li class=\"language\"><a>Français</a></li>\n          </ul>\n        </section>\n      </nav>\n    </div>"
 
 /***/ },
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = "    <div class=\"contain-to-grid sticky\">\n      <nav class=\"top-bar\" data-topbar role=\"navigation\" data-options=\"sticky_on: large\">\n        <ul class=\"title-area\">\n          <li class=\"name\">\n            <h1><a href=\"#main\">Catherine Ducharme</a></h1>\n          </li>\n          <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n          <li class=\"toggle-topbar menu-icon\"><a href=\"#\"><span>Menu</span></a></li>\n        </ul>\n\n        <section class=\"top-bar-section\">\n          <!-- Right Nav Section -->\n          <ul class=\"right\">\n            <li class=\"active\"><a href=\"#portfolio\">À propos</a></li>\n            <li class=\"active\"><a href=\"#contact\">Coordonnées</a></li>\n            <li class=\"language\"><a>English</a></li>\n          </ul>\n        </section>\n      </nav>\n    </div>"
+	module.exports = "    <div class=\"contain-to-grid sticky\">\n      <nav class=\"top-bar\" data-topbar role=\"navigation\" data-options=\"sticky_on: large\">\n        <ul class=\"title-area\">\n          <li class=\"name\">\n            <h1><a href=\"#main\">Catherine Ducharme</a></h1>\n          </li>\n          <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n          <li class=\"toggle-topbar menu-icon\"><a href=\"#\"><span>Menu</span></a></li>\n        </ul>\n\n        <section class=\"top-bar-section\">\n          <!-- Right Nav Section -->\n          <ul class=\"right\">\n            <li class=\"active\"><a href=\"#about\">À propos</a></li>\n            <li class=\"active\"><a href=\"#projects\">Projets</a></li>\n            <li class=\"active\"><a href=\"#contact\">Coordonnées</a></li>\n            <li class=\"language\"><a>English</a></li>\n          </ul>\n        </section>\n      </nav>\n    </div>"
 
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = "    <div class=\"panel medium-12 columns\">\n      <div class=\"middle medium-8 columns\">\n        <h5>Full-Stack Web Developer</h5>\n        <h5>Maker of Bilingual Websites</h5>\n        <h5>Sherbrooker</h5>\n      </div>\n      <div class=\"medium-4 columns\">\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Cathe313\" data-widget-id=\"666708524525727745\">Tweets de @Cathe313</a>\n          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n      </div>\n      <div class=\"medium-8 columns\">\n        <div class=\"medium-4 columns\">\n          \n        </div>\n        <div class=\"medium-4 columns\">\n          \n        </div>\n      </div>  \n    </div>\n    "
+	module.exports = "    <div class=\"panel medium-12 columns\">\n      <div class=\"middle medium-8 columns\">\n        <h5>Full-stack web developer, maker of bilingual websites for Canadian clients. \n        I am a former communications specialist with extensive translation experience.</h5>\n        <section class=\"social-media\">\n          <p>\n            <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>    \n            <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>    \n            <a href=\"https://twitter.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n            <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n          </p>\n        </section>\n      </div>\n      <div class=\"medium-4 columns\">\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Cathe313\" data-widget-id=\"666708524525727745\">Tweets de @Cathe313</a>\n          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n      </div>\n    </div>\n    "
 
 /***/ },
 /* 9 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"panel\">\n    <section class=\"social-media\">\n        <p>\n            Get in touch with me using one of the following options:\n        </p>\n        <ul>\n            <li>\n                <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>\n                <p>On LinkedIn: catherineducharme1</p>\n            </li>\n            <li>\n                <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>\n                <p>On Github: @Cathe313</p>\n            </li>\n            <li>\n                <a href=\"https://twitter.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n                <p>On Twitter: @Cathe313</p>\n            </li>\n            <li>\n                <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n                <p>By email: ducharme.catherine@gmail.com</p>\n            </li>\n        </ul>\n    </section>\n</div>"
+	module.exports = "<div class=\"panel\">\n    <section class=\"social-media\">\n        <p id=\"contactpage\">\n            Don't be a stranger! Get in touch:\n        </p>\n        <ul>\n            <li>\n                <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>\n                <p>On LinkedIn: catherineducharme1</p>\n            </li>\n            <li>\n                <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>\n                <p>On Github: @Cathe313</p>\n            </li>\n            <li>\n                <a href=\"https://twitter.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n                <p>On Twitter: @Cathe313</p>\n            </li>\n            <li>\n                <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n                <p>By email: ducharme.catherine@gmail.com</p>\n            </li>\n        </ul>\n    </section>\n</div>"
 
 /***/ },
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"panel\">\n    <div class=\"projects medium-12 columns\">\n        <div class=\"main medium-4 columns\">\n            <img id='cathepic' src='https://www.gravatar.com/avatar/e32c8ef762f13c8d17ebf9e5dc625a29.jpg?s=500'>\n        </div>\n        <div class=\"main medium-8 columns\">\n            <p class=\"about\">I am a former communications professional with extensive translation experience.\n            </p>\n        </div>\n    </div>\n\n    <div class=\"projects medium-12 columns\">\n\n        <!--DecodeMTL-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/decodemtl-favicon-large.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>DecodeMTL Coding Bootcamp</h4>\n            <p>Over the course of this bootcamp, I learnt full-stack web development with JavaScript. More particularly:</p>\n            <p>Advanced JavaScript (calbacks, promises)</p>\n            <p>Back-end development (NodeJS, ExpressJS, creating APIs with Loopback, mySQL)</p>\n            <p>Front-end development (HTML5, CSS3, SASS, jQuery, Backbone)</p>\n            <p>Development tools (Grunt, Webpack, the command line, Git, Github, Heroku)</p>\n            <p><a href=\"http://www.decodemtl.com/\" target=\"_blank\">Visit Website</a></p>\n        </div>\n\n        <!--Exquisite Cadaver-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/skullicon.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>Exquisite Cadaver</h4>\n            <p>This online game was my final project for the DecodeMTL Full-Stack Web Development bootcamp. I was in charge of the app's back-end (Loopback API, mySQL database, ExpressJS server) and some front-end JavaScript (Backbone), while\n                <a href=\"https://github.com/Marie-EveGauthier\" target=\"_blank\">Marie-Ève Gauthier</a> was the front-end developer.</p>\n            <p>Note that this is a MVP - the app is functional, but still being developed. The back-end is hosted on Heroku.</p>\n            <p><a href=\"https://exquisitecadaver.net\" target=\"_blank\">Visit Website</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver-loopback\" target=\"_blank\">See back-end code on Github</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver\" target=\"_blank\">See front-end code on Github</a></p>\n        </div>\n\n        <!--FoodEmbassy-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/square-logo-2.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>FoodEmbassy</h4>\n            <p>Born at Startup Weekend Sherbrooke 2015, FoodEmbassy is a citizen-based distribution network that enables small, local food producers to sell in bulk directly to their customers, and to reach new customers in other cities.</p>\n            <p>The FoodEmbassy team won the Best Prototype prize at Startup Weekend Sherbrooke, and made more than 1000 $ in sales within its first week of existence.</p>\n            <p><a href=\"https://foodembassy.co\" target=\"_blank\">Visit Website</a></p>\n        </div>\n    </div>\n</div>"
+	module.exports = "<div class=\"panel\">\n    <div class=\"projects medium-12 columns\">\n        <div class=\"main medium-4 columns\">\n            <img id='cathepic' src='https://www.gravatar.com/avatar/e32c8ef762f13c8d17ebf9e5dc625a29.jpg?s=500'>\n        </div>\n        <div class=\"main medium-8 columns\">\n            <p class=\"about\">I've had lots of fun and worn many hats in my previous career as a \n            Communications Specialist (thank you CERIC - that was awesome!): translator, social \n            media manager, content curator, magazine editor, website administrator - none of which \n            I had training for, all of which I learnt quickly, all of which I did efficiently. I \n            don't think there is much you can't do when you really put your mind to it. Besides, \n            a job where you don't constantly learn is a dead-end, not a career.<br/>\n            I recently made a career change that took me from communications to \n            web development - a change that's not as radical as it sounds, since the obsession with \n            detail and ease with languages that I inherited from my previous career have been \n            greatly helpful in mastering the skills needed for web development. The course I took \n            with DecodeMTL (see Projects page for details) covered full-stack web development, and I am \n            now looking for an opportunity to put my new skills to work and keep learning, in my \n            wonderful, new hometown of Sherbrooke, QC.</p>\n            <!--<p class=\"about\">Some things you won't learn about me if you only read my resume:</p>-->\n            <!--<ul>-->\n            <!--    <li>I draw a lot of energy from working with other people. I tried working from -->\n            <!--    home a few times but never could cope with the loneliness.</li>-->\n            <!--    <li>I thrive on change, something I used to deal with by moving city/country every-->\n            <!--    year, but which I now deal with by constantly learning and meeting new people-->\n            <!--    (one has to settle down eventually!). This partially explains my career move towards-->\n            <!--    web development, a field that's constantly changing.</li>-->\n            <!--    <li>I come from Montreal's North Shore but have lived in English for-->\n            <!--    so long that I basically have two first languages now.</li>-->\n            <!--    <li>Personal motto: Remorse is better than regret.</li>-->\n            <!--    <li>My biggest life goal is to learn Mandarin chinese.</li>-->\n            <!--</ul>-->\n        </div>\n    </div>\n</div> "
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"panel\">\n    <div class=\"projects medium-12 columns\">\n\n        <!--DecodeMTL-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/decodemtl-favicon-large.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>DecodeMTL Coding Bootcamp</h4>\n            <p>Over the course of this bootcamp, I learnt full-stack web development with JavaScript. More particularly:</p>\n            <p>Advanced JavaScript (calbacks, promises)</p>\n            <p>Back-end development (NodeJS, ExpressJS, creating APIs with Loopback, mySQL)</p>\n            <p>Front-end development (HTML5, CSS3, SASS, jQuery, Backbone)</p>\n            <p>Development tools (Grunt, Webpack, the command line, Git, Github, Heroku)</p>\n            <p><a href=\"http://www.decodemtl.com/\" target=\"_blank\">Visit Website</a></p>\n        </div>\n\n        <!--Exquisite Cadaver-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/skullicon.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>Exquisite Cadaver</h4>\n            <p>This online game was my final project for the DecodeMTL Full-Stack Web Development bootcamp. I was in charge of the app's back-end (Loopback API, mySQL database, ExpressJS server) and some front-end JavaScript (Backbone), while\n                <a href=\"https://github.com/Marie-EveGauthier\" target=\"_blank\">Marie-Ève Gauthier</a> was the front-end developer.</p>\n            <p>Note that this is a MVP - the app is functional, but still being developed. The back-end is hosted on Heroku.</p>\n            <p><a href=\"https://exquisitecadaver.net\" target=\"_blank\">Visit Website</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver-loopback\" target=\"_blank\">See back-end code on Github</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver\" target=\"_blank\">See front-end code on Github</a></p>\n        </div>\n\n        <!--FoodEmbassy-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/square-logo-2.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>FoodEmbassy</h4>\n            <p>Born at Startup Weekend Sherbrooke 2015, FoodEmbassy is a citizen-based distribution network that enables small, local food producers to sell in bulk directly to their customers, and to reach new customers in other cities.</p>\n            <p>The FoodEmbassy team won the Best Prototype prize at Startup Weekend Sherbrooke, and made more than 1000 $ in sales within its first week of existence.</p>\n            <p><a href=\"https://foodembassy.co\" target=\"_blank\">Visit Website</a></p>\n        </div>\n    </div>\n</div>    "
 
 /***/ }
 /******/ ]);
