@@ -3,10 +3,6 @@ var _ = require('underscore');
 var $app = $('#app');
 var $header = $('#header');
 
-// if (window.localStorage.getItem('language') === null) {
-//     window.localStorage.setItem('language', 'En');
-// }
-// console.log(window.localStorage.getItem('language'));
 
 function createHeaderEn() {
     $header.html('');
@@ -63,19 +59,19 @@ function displayContact() {
     }
 }
 
-function displayPortfolio() {
+function displayAbout() {
     $app.html('');
     
     if (window.localStorage.getItem('language') === 'En') {
         createHeaderEn();
-        var entryTemplateText = require('raw!../views/portfolio.ejs');
+        var entryTemplateText = require('raw!../views/about.ejs');
         var template = _.template(entryTemplateText);
         var compiledTemplate = template();
         $app.append(compiledTemplate);
     }
     else {
         createHeaderFr();
-        entryTemplateText = require('raw!../views/portfolio.ejs');
+        entryTemplateText = require('raw!../views/about-fr.ejs');
         template = _.template(entryTemplateText);
         compiledTemplate = template();
         $app.append(compiledTemplate);
@@ -94,7 +90,7 @@ function displayProjects() {
     }
     else {
         createHeaderFr();
-        entryTemplateText = require('raw!../views/projects.ejs');
+        entryTemplateText = require('raw!../views/projects-fr.ejs');
         template = _.template(entryTemplateText);
         compiledTemplate = template();
         $app.append(compiledTemplate);
@@ -104,6 +100,6 @@ function displayProjects() {
 module.exports = {
     'main': displayMainPage,
     'contact': displayContact,
-    'about': displayPortfolio,
+    'about': displayAbout,
     'projects': displayProjects
 };

@@ -7,7 +7,7 @@ var display = require('./lib/display');
 if (window.localStorage.getItem('language') === null) {
     window.localStorage.setItem('language', 'En');
 }
-console.log(window.localStorage.getItem('language'));
+// console.log(window.localStorage.getItem('language'));
 
 $('body').on('click', '.language', function() {
     if (window.localStorage.getItem('language') === 'Fr') {

@@ -53,7 +53,7 @@
 	if (window.localStorage.getItem('language') === null) {
 	    window.localStorage.setItem('language', 'En');
 	}
-	console.log(window.localStorage.getItem('language'));
+	// console.log(window.localStorage.getItem('language'));
 
 	$('body').on('click', '.language', function() {
 	    if (window.localStorage.getItem('language') === 'Fr') {
@@ -12784,10 +12784,6 @@
 	var $app = $('#app');
 	var $header = $('#header');
 
-	// if (window.localStorage.getItem('language') === null) {
-	//     window.localStorage.setItem('language', 'En');
-	// }
-	// console.log(window.localStorage.getItem('language'));
 
 	function createHeaderEn() {
 	    $header.html('');
@@ -12844,31 +12840,12 @@
 	    }
 	}
 
-	function displayPortfolio() {
+	function displayAbout() {
 	    $app.html('');
 	    
 	    if (window.localStorage.getItem('language') === 'En') {
 	        createHeaderEn();
 	        var entryTemplateText = __webpack_require__(12);
-	        var template = _.template(entryTemplateText);
-	        var compiledTemplate = template();
-	        $app.append(compiledTemplate);
-	    }
-	    else {
-	        createHeaderFr();
-	        entryTemplateText = __webpack_require__(12);
-	        template = _.template(entryTemplateText);
-	        compiledTemplate = template();
-	        $app.append(compiledTemplate);
-	    }
-	}
-
-	function displayProjects() {
-	    $app.html('');
-	    
-	    if (window.localStorage.getItem('language') === 'En') {
-	        createHeaderEn();
-	        var entryTemplateText = __webpack_require__(13);
 	        var template = _.template(entryTemplateText);
 	        var compiledTemplate = template();
 	        $app.append(compiledTemplate);
@@ -12882,10 +12859,29 @@
 	    }
 	}
 
+	function displayProjects() {
+	    $app.html('');
+	    
+	    if (window.localStorage.getItem('language') === 'En') {
+	        createHeaderEn();
+	        var entryTemplateText = __webpack_require__(14);
+	        var template = _.template(entryTemplateText);
+	        var compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
+	    else {
+	        createHeaderFr();
+	        entryTemplateText = __webpack_require__(15);
+	        template = _.template(entryTemplateText);
+	        compiledTemplate = template();
+	        $app.append(compiledTemplate);
+	    }
+	}
+
 	module.exports = {
 	    'main': displayMainPage,
 	    'contact': displayContact,
-	    'about': displayPortfolio,
+	    'about': displayAbout,
 	    'projects': displayProjects
 	};
 
@@ -14459,13 +14455,13 @@
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = "    <div class=\"panel medium-12 columns\">\n      <div class=\"middle medium-8 columns\">\n        <h5>Full-stack web developer, maker of bilingual websites for Canadian clients. \n        I am a former communications specialist with extensive translation experience.</h5>\n        <section class=\"social-media\">\n          <p>\n            <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>    \n            <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>    \n            <a href=\"https://twitter.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n            <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n          </p>\n        </section>\n      </div>\n      <div class=\"medium-4 columns\">\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Cathe313\" data-widget-id=\"666708524525727745\">Tweets de @Cathe313</a>\n          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n      </div>\n    </div>\n    "
+	module.exports = "    <div class=\"panel medium-12 columns\">\n      <div class=\"middle medium-8 columns\">\n        <h1>Full-Stack Web Developer</h1>\n        <h1>Sherbrooke, QC</h1>\n        <h5>I make bilingual websites for Canadian clients. \n        I am a former communications specialist with extensive translation experience.</h5>\n        <section class=\"social-media\">\n          <p>\n            <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>    \n            <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>    \n            <a href=\"https://twitter.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n            <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n          </p>\n        </section>\n      </div>\n      <div class=\"medium-4 columns\">\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Cathe313\" data-widget-id=\"666708524525727745\">Tweets de @Cathe313</a>\n          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n      </div>\n    </div>\n    "
 
 /***/ },
 /* 9 */
 /***/ function(module, exports) {
 
-	module.exports = "    <div class=\"panel medium-12 columns\">\n      <div class=\"middle medium-8 columns\">\n        <h1>Développeur web (full-stack)</h1>  \n        <h5>Je suis une spécialiste des communications bilingue, avec une bonne expérience\n        en traduction (anglais-français).</h5>\n        <section class=\"social-media\">\n          <p>\n            <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>    \n            <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>    \n            <a href=\"https://twitter.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n            <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n          </p>\n        </section>\n      </div>\n      <div class=\"medium-4 columns\">\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Cathe313\" data-widget-id=\"666708524525727745\">Tweets de @Cathe313</a>\n          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n      </div>\n    </div>\n    "
+	module.exports = "    <div class=\"panel medium-12 columns\">\n      <div class=\"middle medium-8 columns\">\n        <h1>Développeur web (full-stack)</h1> \n        <h1>Sherbrooke, QC</h1>  \n        <h5>Je suis une spécialiste des communications bilingue, avec une bonne expérience\n        en traduction (anglais-français).</h5>\n        <section class=\"social-media\">\n          <p>\n            <a href=\"https://ca.linkedin.com/in/catherineducharme1\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/linkedin-icon.png\"></a>    \n            <a href=\"https://github.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/github-icon.png\"></a>    \n            <a href=\"https://twitter.com/Cathe313\" target=\"_blank\"><img class=\"sm\" src=\"assets/images/twitter-icon.png\"></a>\n            <a href=\"mailto:ducharme.catherine@gmail.com\" target=\"_blank\"><img class=\"sm email\" src=\"assets/images/email-icon.png\"></a>\n          </p>\n        </section>\n      </div>\n      <div class=\"medium-4 columns\">\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Cathe313\" data-widget-id=\"666708524525727745\">Tweets de @Cathe313</a>\n          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n      </div>\n    </div>\n    "
 
 /***/ },
 /* 10 */
@@ -14489,7 +14485,19 @@
 /* 13 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"panel\">\n    <div class=\"projects medium-12 columns\">\n\n        <!--DecodeMTL-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/decodemtl-favicon-large.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>DecodeMTL Coding Bootcamp</h4>\n            <p>Over the course of this bootcamp, I learnt full-stack web development with JavaScript. More particularly:</p>\n            <p>Advanced JavaScript (calbacks, promises)</p>\n            <p>Back-end development (NodeJS, ExpressJS, creating APIs with Loopback, mySQL)</p>\n            <p>Front-end development (HTML5, CSS3, SASS, jQuery, Backbone)</p>\n            <p>Development tools (Grunt, Webpack, the command line, Git, Github, Heroku)</p>\n            <p><a href=\"http://www.decodemtl.com/\" target=\"_blank\">Visit Website</a></p>\n        </div>\n\n        <!--Exquisite Cadaver-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/skullicon.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>Exquisite Cadaver</h4>\n            <p>This online game was my final project for the DecodeMTL Full-Stack Web Development bootcamp. I was in charge of the app's back-end (Loopback API, mySQL database, ExpressJS server) and some front-end JavaScript (Backbone), while\n                <a href=\"https://github.com/Marie-EveGauthier\" target=\"_blank\">Marie-Ève Gauthier</a> was the front-end developer.</p>\n            <p>Note that this is a MVP - the app is functional, but still being developed. The back-end is hosted on Heroku.</p>\n            <p><a href=\"https://exquisitecadaver.net\" target=\"_blank\">Visit Website</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver-loopback\" target=\"_blank\">See back-end code on Github</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver\" target=\"_blank\">See front-end code on Github</a></p>\n        </div>\n\n        <!--FoodEmbassy-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/square-logo-2.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>FoodEmbassy</h4>\n            <p>Born at Startup Weekend Sherbrooke 2015, FoodEmbassy is a citizen-based distribution network that enables small, local food producers to sell in bulk directly to their customers, and to reach new customers in other cities.</p>\n            <p>The FoodEmbassy team won the Best Prototype prize at Startup Weekend Sherbrooke, and made more than 1000 $ in sales within its first week of existence.</p>\n            <p><a href=\"https://foodembassy.co\" target=\"_blank\">Visit Website</a></p>\n        </div>\n    </div>\n</div>    "
+	module.exports = "<div class=\"panel\">\n    <div class=\"projects medium-12 columns\">\n        <div class=\"main medium-4 columns\">\n            <img id='cathepic' src='https://www.gravatar.com/avatar/e32c8ef762f13c8d17ebf9e5dc625a29.jpg?s=500'>\n        </div>\n        <div class=\"main medium-8 columns\">\n            <p class=\"about\">J'ai appris énormément lors de ma carrière précédente en communications,\n            et ce dans des fonctions aussi variées que la traduction, les médias sociaux, l'édition\n            de contenu, l'édition de magazines, l'administration de sites web, et plus encore; tant de\n            domaines pour lesquels je n'avais pas de formation, mais que j'ai appris \"sur le tas\" et\n            maîtrisé rapidement. Je ne sais pas s'il y a beaucoup de choses que l'on ne peut pas\n            accomplir quand on s'entête comme il faut! <br/>\n            J'ai récemment traversé une transition de carrière qui m'a amené de Toronto à Sherbrooke, et \n            des communications\n            au développpement web, un changement qui n'est peut-être pas aussi radical qu'il n'y\n            paraît, considérant à quel point mon obsession avec les détails et facilité avec\n            les langues que j'ai hérité de ma carrière précédente m'ont aidé à maîtriser les \n            compétences requises pour le dévelopment web. Le cours que j'ai suivi avec DecodeMTL\n            (plus de détails sur la page Projets) a couvert le développement web \"full-stack\",\n            et je suis maintenant à la recherche d'une opportunité qui me permettra de mettre en \n            application mes nouvelles compétences et d'en apprendre davantage, dans ma ville \n            d'accueil de Sherbrooke, QC.</p>\n        </div>\n    </div>\n</div> "
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"panel\">\n    <div class=\"projects medium-12 columns\">\n\n        <!--DecodeMTL-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/decodemtl-favicon-large.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>DecodeMTL Coding Bootcamp</h4>\n            <p>Over the course of this bootcamp, I learnt full-stack web development with JavaScript. More particularly:</p>\n            <p>Advanced JavaScript (callbacks, promises)</p>\n            <p>Back-end development (NodeJS, ExpressJS, creating APIs with Loopback, mySQL)</p>\n            <p>Front-end development (HTML5, CSS3, SASS, jQuery, Backbone)</p>\n            <p>Development tools (Grunt, Webpack, the command line, Git, Github, Heroku)</p>\n            <p><a href=\"http://www.decodemtl.com/\" target=\"_blank\">Visit Website</a></p>\n        </div>\n\n        <!--Exquisite Cadaver-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/skullicon.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>Exquisite Cadaver</h4>\n            <p>This online game was my final project for the DecodeMTL Full-Stack Web Development bootcamp. I was in charge of the app's back-end (Loopback API, mySQL database, ExpressJS server) and some front-end JavaScript (Backbone), while\n                <a href=\"https://github.com/Marie-EveGauthier\" target=\"_blank\">Marie-Ève Gauthier</a> was the front-end developer.</p>\n            <p>Note that the app is functional, but still being developed. The back-end is hosted on Heroku.</p>\n            <p><a href=\"https://exquisitecadaver.net\" target=\"_blank\">Visit Website</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver-loopback\" target=\"_blank\">See back-end code on Github</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver\" target=\"_blank\">See front-end code on Github</a></p>\n        </div>\n\n        <!--FoodEmbassy-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/square-logo-2.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>FoodEmbassy</h4>\n            <p>Born at Startup Weekend Sherbrooke 2015, FoodEmbassy is a citizen-based distribution network that enables small, local food producers to sell in bulk directly to their customers, and to reach new customers in other cities.</p>\n            <p>The FoodEmbassy team won the Best Prototype prize at Startup Weekend Sherbrooke, and made more than 1000 $ in sales within its first week of existence.</p>\n            <p><a href=\"https://foodembassy.co\" target=\"_blank\">Visit Website</a></p>\n        </div>\n    </div>\n</div>    "
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"panel\">\n    <div class=\"projects medium-12 columns\">\n\n        <!--DecodeMTL-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/decodemtl-favicon-large.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>DecodeMTL - Cours intensif en programmation</h4>\n            <p>Sur une période de 8 semaines d'appentissage intensif, j'ai appris le développement\n            web \"full-stack\" avec JavaScript. En particulier :</p>\n            <p>JavaScript avancé (callbacks, promises)</p>\n            <p>Dévelopment back-end (NodeJS, ExpressJS, créer des APIs avec Loopback, mySQL et bases de données)</p>\n            <p>Dévelopment front-end (HTML5, CSS3, SASS, jQuery, Backbone)</p>\n            <p>Outils de dévelopment (Grunt, Webpack, l'invite de commande, Git, Github, Heroku)</p>\n            <p><a href=\"http://www.decodemtl.com/\" target=\"_blank\">Visitez le site de DecodeMTL</a></p>\n        </div>\n\n        <!--Exquisite Cadaver-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/skullicon.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>Exquisite Cadaver</h4>\n            <p>Cette application en ligne est une version anglaise du jeu du Cadavre Exquis. Il s'agit de mon projet final pour le cours intensif en programmation\n            de DecodeMTL. J'étais en charge du back-end de l'appli (API, base de données, serveur)\n            et d'une partie du JavaScript pour le frontend (Backbone). Ma collègue \n                <a href=\"https://github.com/Marie-EveGauthier\" target=\"_blank\">Marie-Ève Gauthier</a> était la développeur front-end.</p>\n            <p>Notez que l'appli est fonctionnelle, mais encore en développement. Le back-end est hébergé\n            sur Heroku.</p>\n            <p><a href=\"https://exquisitecadaver.net\" target=\"_blank\">Visitez le site</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver-loopback\" target=\"_blank\">Voir le code back-end sur Github</a></p>\n            <p><a href=\"https://github.com/Cathe313/exquisite-cadaver\" target=\"_blank\">Voir le code front-end sur Github</a></p>\n        </div>\n\n        <!--FoodEmbassy-->\n        <div class=\"medium-4 columns\">\n            <img class='pic' src=\"./assets/images/square-logo-2.png\">\n        </div>\n        <div class=\"para medium-8 columns\">\n            <h4>FoodEmbassy</h4>\n            <p>Conçue au Startup Weekend 2015 de Sherbrooke, FoodEmbassy est un réseau de\n            distribution citoyen qui permet aux petits producteurs alimentaires locaux\n            de vendre leurs produits en gros directement à leurs consommateurs, et de\n            rejoindre de nouveaux clients dans d'autres villes. Des aliments de qualité, produits localement, vendus sans intermédiaire - tout le monde y gagne!</p>\n            <p>L'équipe de FoodEmbassy a gagné le prix du meilleur prototype au Startup Weekend \n            de Sherbrooke, et a réalisé plus de 1000 $ en ventes durant sa première semaine d'existence.</p>\n            <p><a href=\"https://foodembassy.co\" target=\"_blank\">Visitez le site de FoodEmbassy</a></p>\n        </div>\n    </div>\n</div>    "
 
 /***/ }
 /******/ ]);
