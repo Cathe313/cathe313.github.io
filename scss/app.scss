@@ -47,6 +47,7 @@
 }
 
 $font-color: #FFFFE0;
+$nav-col: #0a2066;
 
 html, body {
   width: 100%;
@@ -61,6 +62,64 @@ body {
     font-size: 22px;
     margin: auto;
 }
+
+//Navigation bar
+
+.contain-to-grid {
+    background-color: $font-color;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background-color: $font-color;
+    color: $nav-col;
+    &:hover {
+        background-color: $nav-col;
+        color: $font-color;
+    }
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+    background-color: $nav-col;
+    color: $font-color;
+    &:hover {
+        background-color: $font-color;
+        color: $nav-col;
+    }
+}
+
+.top-bar.expanded {
+    .title-area {background-color: $font-color;}
+    .toggle-topbar a {color: $nav-col;}
+}
+
+.top-bar {
+    color: $nav-col;
+}
+
+nav.top-bar {
+    background-color: $font-color;
+    a {
+        font-size: 40px;
+        color: $font-color;
+    }
+    .name {
+        h1 {
+            font-family: 'Montez', serif;
+            font-size: 40px;
+            a {
+                color: $nav-col; 
+            }
+        }   
+    }
+    .expanded .title-area {
+        background-color: $font-color;
+    }
+    .toggle-topbar.menu-icon a {
+        color: $nav-col;
+    }
+}
+
+//end of navigation bar
 
 a {
     text-decoration: none;
@@ -80,34 +139,31 @@ ul {
     height: 100vh;
     width: 100vw;
     background-repeat: repeat-y;
-}
-
-.landing {
-    background-image: url("../assets/images/light-creative-abstract-colorful.jpg");
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    background-repeat: repeat-y;
     h5 {
-        padding: 10px;
-        font-size: 30px;
+        // padding: 10px;
+        font-size: 25px;
         text-align: center;
         color: white;
+        // @include vertical-align();
     }
     .middle {
-        margin-top: 30px;
-        background-color: gray;
-        border-radius: 3%;
-        width: 400px;
-        height: 400px;
-    }
-    @media only screen and (min-width: 64.063em) { 
-        @include vertical-align();
-        border-radius: 50%;
-        width: 550px;
-        height: 550px;
+        margin: auto;
+        background-color: $nav-col;
+        border-radius: 5%;
+        width: 350px;
+        height: 350px;
+        @media only screen and (min-width: 64.063em) { 
+            @include vertical-align();
+            border-radius: 50%;
+            width: 500px;
+            height: 500px;
+        }
     }
 
+}
+
+.twitter-timeline {
+    margin-top: 30px;
 }
 
 .para {
@@ -176,21 +232,4 @@ ul {
 
 //end of social media icons
 
-//Navigation bar
 
-nav {
-    background: $font-color;
-    a {
-        font-size: 40px;
-        color: $font-color;
-    }
-    h1 {
-        font-family: 'Montez', serif;
-        font-size: 40px;
-    }
-    .active {
-        background-color: #186FB6;
-    }
-}
-
-//end of navigation bar
